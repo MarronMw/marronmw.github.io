@@ -309,5 +309,6 @@ width: fit-content;
     display: flex !important;
     flex-direction: column !important;
     overflow: scroll;
+    background: none;
   }
 }
