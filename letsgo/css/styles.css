@@ -305,6 +305,7 @@ width: fit-content;
 /* making the team section to be column-flex on mobile */
 @media screen and (max-width: 650px) {
   .team__container {
-    display: ruby !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 }
