@@ -311,3 +311,9 @@ width: fit-content;
     background: none !important;
   }
 }
+/* on desktop */
+@media screen and (min-width: 1024px) {
+  .team__container {
+    margin-left: 10rem !important;
+  }
+}
