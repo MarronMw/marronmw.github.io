@@ -304,11 +304,10 @@ width: fit-content;
   padding: 1rem;
 }
 /* making the team section to be column-flex on mobile */
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 627px) {
   .team__container {
     display: flex !important;
     flex-direction: column !important;
-    overflow: scroll;
-    background: none;
+    background: none !important;
   }
 }
