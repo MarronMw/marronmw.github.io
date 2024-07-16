@@ -311,7 +311,7 @@ width: fit-content;
     background: none !important;
   }
 }
-/* on desktop */
+/* on desktop making the team view centred */
 @media screen and (min-width: 1024px) {
   .team__container {
     margin-left: 10rem !important;
