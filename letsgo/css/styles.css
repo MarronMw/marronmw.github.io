@@ -104,7 +104,6 @@ body {
   color: var(--blue) !important;
   transition: all 0.3s;
   text-decoration: underline;
-  
 }
 
 /*BUTTONS*/
@@ -302,4 +301,11 @@ width: fit-content;
 
 .team__member-socials a {
   padding: 1rem;
+}
+/* making the team section to be column-flex on mobile */
+@media screen and (max-width: 650px) {
+  .team {
+    display: flex;
+    flex-direction: column;
+  }
 }
