@@ -342,4 +342,5 @@ width: fit-content;
 .brief-description {
   bottom: 3rem !important;
   font-size: 1rem !important;
+  padding: 5rem !important;
 }
