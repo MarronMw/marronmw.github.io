@@ -14,6 +14,7 @@
   --gray: #ccc;
 }
 body {
+  position: relative !important;
   font-family: "Monserrat", Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -31,6 +32,14 @@ body {
 .company-name {
   color: var(--blue);
 }
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 7rem !important;
+  }
+}
+
+/* end */
 
 .hero-section {
   background: url("../images/travevl3.jpg") center center no-repeat;
@@ -316,4 +325,21 @@ width: fit-content;
   .team__container {
     margin-left: 10rem !important;
   }
+}
+
+/* SECTIONS */
+.hero-section {
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+  position: relative;
+}
+
+.box > h3 {
+  text-transform: capitalize;
+}
+
+.brief-description {
+  bottom: 3rem !important;
+  font-size: 1rem !important;
 }
