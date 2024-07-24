@@ -344,3 +344,10 @@ width: fit-content;
   font-size: 1rem !important;
   padding: 5rem !important;
 }
+
+.descript-icon {
+  color: var(--blue);
+  font-size: 48px;
+  position: relative;
+  top: 50px;
+}
