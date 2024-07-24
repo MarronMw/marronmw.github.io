@@ -333,6 +333,9 @@ width: fit-content;
 .box > h3 {
   text-transform: capitalize;
 }
+.box > p {
+  line-height: 1.5 !important;
+}
 
 .brief-description {
   bottom: 3rem !important;
@@ -353,4 +356,12 @@ width: fit-content;
 .send_email:hover {
   color: white;
   text-decoration: none;
+}
+
+.goals_icons {
+  font-size: 2rem !important;
+  background-color: #18bef0;
+  border-radius: 100%;
+  color: var(--white);
+  padding: 0.3rem;
 }
