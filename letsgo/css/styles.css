@@ -1,4 +1,4 @@
-*,
+I'm*,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -422,6 +422,10 @@ width: fit-content;
   .text-center h3 {
     font-size: 1rem !important;
   }
+/*mobile sect size*/
+section{
+   width:fit-content;
+}
 }
 
 .reveal {
