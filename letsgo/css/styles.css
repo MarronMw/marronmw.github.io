@@ -12,6 +12,7 @@
   --blue: #18bef0;
   --white: #fbfaff;
   --gray: #ccc;
+  --blue-low-opcacity: #f7fcfd;
 }
 body {
   position: relative !important;
@@ -19,6 +20,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 
 /*HEADINGS*/
@@ -40,6 +43,10 @@ body {
 }
 
 /* end */
+/* sections */
+section {
+  height: 100vh;
+}
 
 .hero-section {
   background: url("../images/travevl3.jpg") center center no-repeat;
@@ -72,6 +79,11 @@ body {
   max-width: 600px;
   margin: auto;
 }
+
+#product-and-services {
+  height: fit-content;
+}
+
 @media screen and (min-width: 1024px) {
   .hero-section {
     height: 60dvh;
@@ -91,10 +103,21 @@ body {
   height: 10rem;
   overflow: hidden;
 }
+/* the moving object in the hero section */
 
+.motion {
+  /* position: absolute;
+  left: 50vw; */
+  height: 5rem;
+  width: 5rem;
+  z-index: 1;
+}
 @media screen and (min-width: 1024px) {
   .swiper-slide {
     height: 20rem;
+  }
+  .motion {
+    margin-top: 3rem;
   }
 }
 
@@ -121,6 +144,15 @@ body {
   outline: 0 !important;
   border: none !important;
 }
+
+/* CONTAINERS */
+.container.text-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /*SECTIONS*/
 .about-section {
   overflow: hidden;
@@ -131,6 +163,7 @@ body {
 .services-section {
   background: #f7fcfd;
 }
+
 @media screen and (max-width: 600px) {
   .about-section {
     display: none;
@@ -177,6 +210,13 @@ body {
   }
 }
 
+/* desktop */
+@media screen and(min-width:1024px) {
+  .team {
+    display: flex;
+  }
+}
+
 /*COLORS*/
 .blue {
   color: var(--blue);
@@ -189,6 +229,9 @@ body {
 }
 .gray {
   color: var(--gray);
+}
+.low-op-blue {
+  background: var(--blue-low-opcacity);
 }
 
 .bg-blue {
@@ -370,28 +413,25 @@ width: fit-content;
   padding: 0.3rem;
 }
 
-
 /* MOBILE */
 
-@media screen and(max-width:482px){
-.hero-section{
-  display: flex;
-
+@media screen and(max-width:482px) {
+  .hero-section {
+    display: flex;
   }
-  .text-center h3{
+  .text-center h3 {
     font-size: 1rem !important;
   }
-  
 }
 
-.reveal{
+.reveal {
   position: relative;
   transform: translateY(150px);
   opacity: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
-.reveal.active{
+.reveal.active {
   transform: translateY(0px);
   opacity: 1;
 }
