@@ -1,4 +1,4 @@
-I'm*,
+*,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -85,15 +85,14 @@ section {
 }
 /* making a responsive mobile view */
 @media screen and(max-width:483px) {
-  .services{
+  .services {
     min-height: 100vh;
     height: fit-content;
   }
-  section.team.reveal.low-op-blue.active{
+  section.team.reveal.low-op-blue.active {
     min-height: 100vh !important;
     height: fit-content !important;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
@@ -365,7 +364,7 @@ width: fit-content;
 /* making the team section to be column-flex on mobile */
 @media screen and (max-width: 627px) {
   .team__container {
-    display: flex ;
+    display: flex;
     flex-direction: column;
     background: none;
   }
@@ -434,10 +433,10 @@ width: fit-content;
   .text-center h3 {
     font-size: 1rem !important;
   }
-/*mobile sect size*/
-section{
-   width:fit-content;
-}
+  /*mobile sect size*/
+  section {
+    width: fit-content;
+  }
 }
 
 .reveal {
