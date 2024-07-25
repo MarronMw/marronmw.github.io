@@ -343,6 +343,10 @@ width: fit-content;
   padding: 5rem !important;
 }
 
+.brief-description:hover {
+  animation: inFromLeft 5s ease-in-out;
+}
+
 .descript-icon {
   font-size: 3rem !important;
   color: var(--blue);
@@ -378,4 +382,16 @@ width: fit-content;
     font-size: 1rem !important;
   }
   
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
 }

@@ -29,7 +29,10 @@
           <div class="swiper-slide">
             <img src="images/travel4.webp" class="img-fluid" alt="Slide 3" />
           </div>
-        </div> -->
+        </div>
+</section>
+        
+        -->
 
 <!-- Add Pagination -->
 <!-- <div class="swiper-pagination"></div> -->
