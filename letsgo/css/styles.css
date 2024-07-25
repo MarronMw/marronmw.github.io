@@ -190,6 +190,13 @@ section {
   .faq {
     padding: 1.5rem;
   }
+   
+  .team{
+    min-height: 100vh;
+    height: fit-content;
+  }
+
+
   .team__container {
     grid-template-columns: 1fr 1fr;
     gap: 0.7rem;
@@ -211,6 +218,8 @@ section {
     display: block;
   }
 
+  
+
   .team__container {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
@@ -223,9 +232,9 @@ section {
 
 /* desktop */
 @media screen and(min-width:1024px) {
-  .team {
+  /* .team {
     display: flex;
-  }
+  } */
 }
 
 /*COLORS*/
