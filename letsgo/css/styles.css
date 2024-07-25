@@ -83,6 +83,14 @@ section {
 #product-and-services {
   height: fit-content;
 }
+/* making a responsive mobile view */
+@media screen and(max-width:483px) {
+  .services-section,
+  .team.reveal {
+    min-height: 100vh;
+    height: fit-content;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .hero-section {
