@@ -365,3 +365,17 @@ width: fit-content;
   color: var(--white);
   padding: 0.3rem;
 }
+
+
+/* MOBILE */
+
+@media screen and(max-width:482px){
+.hero-section{
+  display: flex;
+
+  }
+  .text-center h3{
+    font-size: 1rem !important;
+  }
+  
+}
