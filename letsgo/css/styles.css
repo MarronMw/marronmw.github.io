@@ -343,6 +343,10 @@ width: fit-content;
   padding: 5rem !important;
 }
 
+.brief-description:hover {
+  animation: inFromLeft 5s ease-in-out;
+}
+
 .descript-icon {
   font-size: 3rem !important;
   color: var(--blue);
@@ -379,4 +383,16 @@ width: fit-content;
 #product-and-services .card-text {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/* #animations */
+@keyframes inFromLeft {
+  0% {
+    transform: translateX(-100);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
