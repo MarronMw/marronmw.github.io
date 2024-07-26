@@ -541,8 +541,17 @@
           whatsapp
         </a>
       </div>
-      <p>&copy; 2024 TravelCo. All Rights Reserved.</p>
+      <p>&copy; <span id="year"></span> TravelCo. All Rights Reserved.</p>
     </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const yearSpan = document.getElementById("year");
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
+      });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
