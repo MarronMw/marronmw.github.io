@@ -190,12 +190,11 @@ section {
   .faq {
     padding: 1.5rem;
   }
-   
-  .team{
+
+  .team {
     min-height: 100vh;
     height: fit-content;
   }
-
 
   .team__container {
     grid-template-columns: 1fr 1fr;
@@ -217,8 +216,6 @@ section {
   #about:target {
     display: block;
   }
-
-  
 
   .team__container {
     grid-template-columns: repeat(3, 1fr);
@@ -431,6 +428,12 @@ width: fit-content;
   border-radius: 100%;
   color: var(--white);
   padding: 0.3rem;
+}
+
+/* link button first hidden then later show */
+.send_email {
+  display: none;
+  color: white;
 }
 
 /* MOBILE */

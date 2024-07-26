@@ -303,7 +303,7 @@
     <section id="contact" class="contact-section py-5 reveal">
       <div class="container">
         <h2 class="blue text-center">Contact Us</h2>
-        <form>
+        <form id="emailForm">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Name</label>
@@ -333,14 +333,12 @@
               placeholder="Your Message"
             ></textarea>
           </div>
-          <button id="SEND-BTN" type="submit" class="btn btn-primary bg-blue">
-            <a
-              id="SEND"
-              class="send_email"
-              href="mailto:info@letsgotravelandtours.com?cc=letsgotravelandtours299@gmail.com&subject=Hello%20Let's%20Go%20Travels%20and%20Tours&body=This%20is%20a%20test%20email."
-              >Send Email
-            </a>
+          <button id="SEND-BTN" type="button" class="btn btn-primary bg-blue">
+            Generate Email Link
           </button>
+          <a id="SEND" class="send_email btn btn-primary" href="#" role="button"
+            >Send Email</a
+          >
         </form>
       </div>
     </section>
