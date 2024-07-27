@@ -75,4 +75,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-// prd
+// Humburger
+function toggleMenu(button) {
+  button.classList.toggle('active');
+  
+}

@@ -23,6 +23,78 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* navbar */
+.navbar-toggler {
+  border: none; 
+  background: transparent; 
+  position: relative;
+  width: 40px; 
+  height: 30px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none; 
+  transition: background 0.3s, color 0.3s; 
+}
+
+
+.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  width: 30px;
+  height: 2px;
+  background: black; 
+  position: relative;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: black; 
+  position: absolute;
+  left: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px; 
+}
+
+.navbar-toggler-icon::after {
+  top: 8px;
+}
+
+.navbar-toggler-x {
+  display: none; 
+  font-size: 24px;
+  color: black; 
+}
+
+
+.navbar-toggler.active .navbar-toggler-icon {
+  background: transparent;
+}
+
+.navbar-toggler.active .navbar-toggler-icon::before,
+.navbar-toggler.active .navbar-toggler-icon::after {
+  background: transparent;
+  transform: rotate(45deg); 
+}
+
+.navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(-45deg); 
+}
+
+.navbar-toggler.active .navbar-toggler-x {
+  display: block;
+}
 
 /*HEADINGS*/
 .heading {
