@@ -183,13 +183,13 @@ section {
     display: block;
   }
 
-  .faqs__container {
+  /* .faqs__container {
     grid-template-columns: 1fr;
   }
 
   .faq {
     padding: 1.5rem;
-  }
+  } */
 
   .team {
     min-height: 100vh;
@@ -265,7 +265,7 @@ section {
 }
 
 /* FAQS */
-.faqs h2 {
+/* .faqs h2 {
   color: var(--blue);
   padding: 3rem;
   text-align: center;
@@ -308,7 +308,7 @@ section {
 
 .faq.open p {
   display: block;
-}
+} */
 
 /* OUR TEAM */
 .team h2 {
@@ -375,10 +375,14 @@ width: fit-content;
     background: none;
   }
 }
+
 /* on desktop making the team view centred */
 @media screen and (min-width: 1024px) {
   .team__container {
-    margin-left: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-right: 2rem;
   }
 }
 
@@ -462,3 +466,4 @@ width: fit-content;
   transform: translateY(0px);
   opacity: 1;
 }
+
