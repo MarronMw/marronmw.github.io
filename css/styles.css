@@ -15,9 +15,9 @@ html {
 
 /* body styles */
 body {
-  font-size: 1.6rem;
   background-color: var(--background-color-dark);
   color: var(--white);
+  font-size: 1.6rem;
 }
 
 /* paragraphs */
