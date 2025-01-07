@@ -1,0 +1,27 @@
+@import "./paragraphs.css";
+
+/* Universal styles */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+/* Variables */
+:root {
+  --background-color-dark: #2d2d2d;
+  --white: #fff;
+}
+
+/* root element styles */
+html {
+  font-size: 62.5%; /*so as 1rem is equal to 10px*/
+}
+
+/* body styles */
+body {
+  font-size: 1.6rem;
+  background-color: var(--background-color-dark);
+  color: var(--white);
+}
+
+/* paragraphs */
