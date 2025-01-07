@@ -7,8 +7,32 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <div class="navbar" id="NAVBAR"></div>
     <h1>Maranatha James Ndege</h1>
     <p>hello there</p>
     <p>how are you doing today?</p>
+
+    <!-- All Scripts -->
+    <script type="text/javascript">
+      //a function  for including components to this page
+      async function includeHtml(file, elementId) {
+        try {
+          const response = await fetch(file);
+          if (!response.ok)
+            throw new Error(`HTTP Error! status: ${response.status}`);
+
+          const content = await response.text();
+          document.getElementById(elementId).innerHTML = content;
+        } catch (error) {
+          console.error("Error loading the HTML  file", error);
+          document.getElementById(elementId).innerHTML =
+            "<p> Faileled to load contents, please try again later!</p>";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () =>
+        includeHtml("./components/navbar.html", "NAVBAR")
+      );
+    </script>
   </body>
 </html>
