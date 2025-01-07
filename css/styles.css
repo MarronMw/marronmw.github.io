@@ -1,15 +1,11 @@
 @import "./paragraphs.css";
+@import "./vars.css";
 
 /* Universal styles */
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-/* Variables */
-:root {
-  --background-color-dark: #2d2d2d;
-  --white: #fff;
 }
 
 /* root element styles */
