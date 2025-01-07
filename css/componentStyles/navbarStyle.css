@@ -19,7 +19,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 nav > a,
@@ -31,8 +31,6 @@ nav > a,
 }
 
 nav > a:hover {
-  color: var(--accent-color);
-  font-size: 1.7rem;
   font-weight: 600;
-  transition: all 0.3s;
+  transition: all 0.1s;
 }
