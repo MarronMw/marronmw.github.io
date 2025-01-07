@@ -1,5 +1,8 @@
 /* Variables */
 :root {
+  --accent-color: #7b9efa;
   --background-color-dark: #2d2d2d;
+  --body-font: "Montserrat";
+  --secondary-color: #fcad88;
   --white: #fff;
 }

@@ -1,0 +1,38 @@
+/* button */
+.btn {
+  font-size: 1.6rem;
+  border: 2px solid var(--white);
+  padding: 0.5rem 3rem;
+}
+.hireMe {
+  background: none;
+  border-radius: 1rem;
+}
+.hireMe:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav > a,
+.hireMe {
+  color: var(--white);
+  font-family: var(--body-font);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav > a:hover {
+  color: var(--accent-color);
+  font-size: 1.7rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
