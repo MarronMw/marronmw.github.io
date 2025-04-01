@@ -1,45 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maranatha James Ndege</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <div class="navbar" id="NAVBAR"></div>
-    <h1>Maranatha James Ndege</h1>
-    <p>hello there</p>
-    <p>how are you doing today?</p>
-    <marquee behavior="" direction="">
-      <p>
-        Please note that this web is currently under construction we will get
-        live with more info soon, for the mean time refer to the top bar and we
-        will redirect you to a whatsapp chat.
-      </p>
-    </marquee>
-
-    <!-- All Scripts -->
-    <script type="text/javascript">
-      //a function  for including components to this page
-      async function includeHtml(file, elementId) {
-        try {
-          const response = await fetch(file);
-          if (!response.ok)
-            throw new Error(`HTTP Error! status: ${response.status}`);
-
-          const content = await response.text();
-          document.getElementById(elementId).innerHTML = content;
-        } catch (error) {
-          console.error("Error loading the HTML  file", error);
-          document.getElementById(elementId).innerHTML =
-            "<p> Faileled to load contents, please try again later!</p>";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maranatha James Ndege | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
         }
-      }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .section {
+            padding: 50px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Maranatha James Ndege</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-      document.addEventListener("DOMContentLoaded", () =>
-        includeHtml("./components/navbar.html", "NAVBAR")
-      );
-    </script>
-  </body>
+    <!-- About Section -->
+    <section id="about" class="section text-center">
+        <div class="container">
+            <img src="0I5A8041_3x.webp" alt="Profile Photo" class="profile-img mb-3">
+            <h2>About Me</h2>
+            <p>I'm Maranatha James Ndege, a passionate junior developer specializing in web and mobile development. Currently pursuing my ICT degree at Daeyang University.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-4">HTML, CSS, Bootstrap</div>
+                <div class="col-md-4">JavaScript, React, React Native, Flutter</div>
+                <div class="col-md-4">Python (Django), PHP, MySQL, SQLite</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <ul>
+                <li>Voting System (Votim’chala) - A biometric voting system</li>
+                <li>Benthu - A gossiping app for university students</li>
+                <li>IoT-based Smart Pill Dispenser - Intelligent medication management</li>
+                <li>Window Shopping App - Price comparison with barcode scanning</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light text-center">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:maranatha@example.com">maranatha@example.com</a></p>
+            <p>LinkedIn: <a href="#">linkedin.com/in/maranatha</a></p>
+            <p>GitHub: <a href="#">github.com/maranatha</a></p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
