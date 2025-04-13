@@ -169,3 +169,12 @@ body {
   color: var(--tertiary-dark);
   font-size: 3rem;
 }
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.cards {
+  display: flex;
+  border: 2px solid dodgerblue;
+  padding: 0 3rem;
+}
