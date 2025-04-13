@@ -37,7 +37,7 @@ body {
   /* z-index: -1; */
 }
 
-.main {
+.hero {
   position: relative;
   align-items: center;
   /* background-blend-mode: multiply; */
@@ -74,7 +74,7 @@ body {
     padding: 1rem 2rem; /* Reduce padding for smaller screens */
   }
 
-  .main {
+  .hero {
     height: 100vh;
     padding: 2rem; /* Add some padding around the content */
   }
@@ -124,7 +124,7 @@ body {
     padding: 1rem 3rem; /* Adjust padding for tablets */
   }
 
-  .main {
+  .hero {
     position: relative;
     height: auto; /* Adjust height, consider using min-height */
     min-height: 100vh;
