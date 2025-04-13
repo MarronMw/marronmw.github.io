@@ -19,7 +19,6 @@ body {
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-color: var(--base-color);
-  background-image: url("./../assets//bg-2.json");
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--neutral-off-whitewhite);
