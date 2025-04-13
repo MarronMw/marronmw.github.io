@@ -112,3 +112,33 @@ body {
     width: 95%;
   }
 }
+
+/* Tablet view media query (example: for screens between 769px and 1024px width) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 56.25%; /* Slightly reduce base font size for tablets */
+  }
+
+  body {
+    font-size: 1.5rem; /* Adjust body font size */
+    padding: 1rem 3rem; /* Adjust padding for tablets */
+  }
+
+  .main {
+    position: relative;
+    height: auto; /* Adjust height, consider using min-height */
+    min-height: 100vh;
+    align-items: center; /* Keep content centered on tablets */
+    padding: 2rem;
+  }
+
+  .main-header {
+    font-size: 5rem; /* Reduce header font size for tablets */
+  }
+
+  .lottie {
+    position: absolute;
+    width: 60%; /* Adjust Lottie size for tablets */
+    bottom: 0;
+  }
+}
