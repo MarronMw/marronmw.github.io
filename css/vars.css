@@ -1,8 +1,17 @@
 /* Variables */
 :root {
-  --accent-color: #7b9efa;
-  --background-color-dark: #2d2d2d;
   --body-font: "Montserrat";
-  --secondary-color: #fcad88;
-  --white: #fff;
+  --base-color: #142a41;
+  --secondary-light: #284566;
+  --tertiary-light: #4d6a8c;
+  --accent-warm: #fca311;
+  --neutral-light: #e5e5e5;
+  --secondary-adjacent: #1a3a59;
+  --tertiary-dark: #0d1f33;
+  --accent-bright: #e67e22;
+  --neutral-medium: #d3d3d3;
+  --complementary-dark: #412b14;
+  --complementary-light: #734a26;
+  --neutral-off-white: #f9f9f9;
+  --neutral-dark: #808080;
 }

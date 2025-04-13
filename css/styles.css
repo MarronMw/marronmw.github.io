@@ -18,7 +18,7 @@ html {
 body {
   background-attachment: fixed;
   background-blend-mode: multiply;
-  background-color: var(--background-color-dark);
+  background-color: var(--base-color);
   background-image: url("./../assets/design/images/texture.webp");
   background-repeat: no-repeat;
   background-size: cover;
