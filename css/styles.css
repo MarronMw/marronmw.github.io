@@ -75,8 +75,7 @@ body {
   }
 
   .main {
-    align-items: flex-start; /* Align items to the top on smaller screens */
-    height: auto; /* Allow content to dictate height */
+    height: 100vh;
     padding: 2rem; /* Add some padding around the content */
   }
 
@@ -86,10 +85,9 @@ body {
   }
 
   .lottie {
-    position: relative; /* Adjust positioning for better flow */
-    bottom: auto;
+    position: relative;
+    bottom: 5rem;
     margin-top: 2rem; /* Add some top margin */
-    width: 80%; /* Adjust width as needed */
     margin-left: auto;
     margin-right: auto;
   }
