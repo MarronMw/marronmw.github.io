@@ -175,6 +175,16 @@ body {
 }
 .cards {
   display: flex;
-  border: 2px solid dodgerblue;
   padding: 0 3rem;
+}
+
+.about-card {
+  flex: 3;
+  padding: 3rem;
+  text-align: justify;
+  margin: 20px auto; /* Centering with margin */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+.github-profile-card {
+  flex: 1;
 }
