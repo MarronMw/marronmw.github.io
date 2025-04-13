@@ -22,9 +22,27 @@ body {
   background-image: url("./../assets/design/images/texture.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  color: var(--white);
+  color: var(--neutral-off-whitewhite);
   font-size: 1.6rem;
   padding: 1rem 5rem;
 }
 
 /* paragraphs */
+
+.main {
+  align-items: center;
+  /* background-blend-mode: multiply; */
+  background-color: #142a41;
+  background-image: url("./assets/images/bg-2.json");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+.main-header {
+  color: var(--neutral-off-white);
+  font-family: "Montserrati", Arial, Helvetica, sans-serif;
+  font-size: 5rem;
+  text-align: center;
+}
