@@ -62,3 +62,55 @@ body {
   text-align: center;
   z-index: 1;
 }
+
+/* Mobile view media query (example: for screens up to 768px width) */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%; /* Adjust base font size for smaller screens */
+  }
+
+  body {
+    font-size: 1.4rem; /* Adjust body font size */
+    padding: 1rem 2rem; /* Reduce padding for smaller screens */
+  }
+
+  .main {
+    align-items: flex-start; /* Align items to the top on smaller screens */
+    height: auto; /* Allow content to dictate height */
+    padding: 2rem; /* Add some padding around the content */
+  }
+
+  .main-header {
+    font-size: 4rem; /* Reduce header font size */
+    margin-top: 2rem; /* Add some top margin */
+  }
+
+  .lottie {
+    position: relative; /* Adjust positioning for better flow */
+    bottom: auto;
+    margin-top: 2rem; /* Add some top margin */
+    width: 80%; /* Adjust width as needed */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Further adjustments for even smaller screens (optional) */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 43.75%; /* Further reduce base font size */
+  }
+
+  body {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .main-header {
+    font-size: 3rem;
+  }
+
+  .lottie {
+    width: 95%;
+  }
+}
