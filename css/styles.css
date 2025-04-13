@@ -19,7 +19,7 @@ body {
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-color: var(--base-color);
-  background-image: url("./../assets/design/images/texture.webp");
+  background-image: url("./../assets//bg-2.json");
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--neutral-off-whitewhite);
@@ -28,8 +28,14 @@ body {
 }
 
 /* paragraphs */
+.lottie {
+  position: absolute;
+  bottom: 0.5rem;
+  /* z-index: -1; */
+}
 
 .main {
+  position: relative;
   align-items: center;
   /* background-blend-mode: multiply; */
   background-color: #142a41;
@@ -43,6 +49,7 @@ body {
 .main-header {
   color: var(--neutral-off-white);
   font-family: "Montserrati", Arial, Helvetica, sans-serif;
-  font-size: 5rem;
+  font-size: 7rem;
   text-align: center;
+  z-index: 1;
 }
