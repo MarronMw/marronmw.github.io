@@ -188,3 +188,10 @@ body {
 .github-profile-card {
   flex: 1;
 }
+
+
+@media screen and (max-width: 768px){
+  .cards{
+   flex-direction:column;
+  }
+}
