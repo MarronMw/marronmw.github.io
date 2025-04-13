@@ -47,7 +47,7 @@ body {
 }
 .main-header {
   color: var(--neutral-off-white);
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 7rem;
   text-align: center;
   z-index: 1;
