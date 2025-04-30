@@ -14,73 +14,434 @@
     <!-- END OF FONTS -->
 
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <header
+      class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700"
+    >
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo/Brand -->
+          <div class="flex-shrink-0">
+            <a
+              href="#"
+              class="text-xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-300"
+            >
+              Maranatha.dev
+            </a>
+          </div>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-center space-x-8">
+              <a
+                href="#"
+                class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                Home
+              </a>
+              <a
+                href="#about"
+                class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                About
+              </a>
+              <a
+                href="#projects"
+                class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                Projects
+              </a>
+              <a
+                href="#contact"
+                class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200"
+              >
+                Contact
+              </a>
+
+              <!-- Dark Mode Toggle -->
+              <button
+                id="theme-toggle"
+                type="button"
+                class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2.5 transition-colors duration-200"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="w-5 h-5 hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="w-5 h-5 hidden"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors duration-200"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#"
+            class="text-gray-900 dark:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            class="text-gray-900 dark:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+          >
+            About
+          </a>
+          <a
+            href="#projects"
+            class="text-gray-900 dark:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            class="text-gray-900 dark:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+          >
+            Contact
+          </a>
+          <div class="px-3 py-2">
+            <button
+              id="mobile-theme-toggle"
+              type="button"
+              class="flex items-center text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg px-3 py-2 transition-colors duration-200 w-full"
+            >
+              <span class="mr-3">Dark Mode</span>
+              <svg
+                id="mobile-theme-toggle-dark-icon"
+                class="w-5 h-5 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                ></path>
+              </svg>
+              <svg
+                id="mobile-theme-toggle-light-icon"
+                class="w-5 h-5 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <!-- Hero Section -->
-    <div class="hero">
-      <h1 class="header main-header">
-        Hello there &#128075;, I am <span>Maranatha</span> James Ndege, a
-        Passionate Junior Software Developer.
-      </h1>
-      <!-- Animating the bg -->
+    <div
+      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4 py-16 sm:px-6 lg:px-8"
+    >
+      <!-- Content Container -->
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6 leading-tight"
+        >
+          Hello there <span class="inline-block animate-waving-hand">👋</span>,
+          I am
+          <span class="text-blue-600 dark:text-blue-400"
+            >Maranatha James Ndege</span
+          >,
+          <span class="block mt-3 text-3xl sm:text-4xl md:text-5xl"
+            >a Passionate Junior Software Developer.</span
+          >
+        </h1>
+
+        <!-- Call-to-action buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+          <a
+            href="#projects"
+            class="px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300"
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            class="px-8 py-3 text-lg font-medium text-blue-600 bg-white rounded-lg shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 dark:bg-gray-800 dark:text-blue-400"
+          >
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <!-- Lottie Animation -->
       <dotlottie-player
         src="https://lottie.host/9a31ca59-b0b7-4078-823c-57cdea1f5633/uG2zinCBRx.lottie"
         background="transparent"
         speed="1"
-        style="width: 400px; height: 400px; position: absolute"
+        class="absolute opacity-70 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] -bottom-10 -right-10 sm:right-0"
         loop
         autoplay
-        class="lottie"
       ></dotlottie-player>
     </div>
 
     <!-- About Section -->
-    <div class="about">
-      <h2 class="header main-header">About me</h2>
-      <div class="cards">
-        <div class="about-card">
-          <p class="bio" id="bio"></p>
-        </div>
-        <div class="github-profile-card">
-          <div class="github-profile-header">
-            <img id="github-avatar" class="github-avatar" />
-            <h3 id="github-username" class="github-username"></h3>
+    <div
+      class="min-h-screen w-full flex items-center justify-center bg-white dark:bg-gray-900 px-4 py-12"
+    >
+      <div class="max-w-6xl mx-auto w-full">
+        <h2
+          class="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white"
+        >
+          About me
+        </h2>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Bio Card -->
+          <div
+            class="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
+          >
+            <p
+              class="text-gray-700 dark:text-gray-300 leading-relaxed"
+              id="bio"
+            >
+              <!-- Bio content will be inserted here -->
+            </p>
           </div>
-          <div class="github-profile-details">
-            <p>
-              <strong class="detail-title">GitHub URL:</strong>
-              <a
-                id="github-link"
-                href="#"
-                target="_blank"
-                class="github-link"
-              ></a>
-            </p>
-            <p>
-              <strong class="detail-title">Followers:</strong>
-              <span id="github-followers" class="detail-value"></span>
-            </p>
-            <p>
-              <strong class="detail-title">Following:</strong>
-              <span id="github-following" class="detail-value"></span>
-            </p>
-            <p>
-              <strong class="detail-title">Public Repos:</strong>
-              <span id="github-repos" class="detail-value"></span>
-            </p>
-            <p>
-              <strong class="detail-title">Joined:</strong>
-              <span id="github-joined" class="detail-value"></span>
-            </p>
+
+          <!-- GitHub Profile Card -->
+          <div
+            class="w-full lg:w-96 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+          >
+            <div
+              class="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 flex items-center space-x-4"
+            >
+              <img
+                id="github-avatar"
+                class="w-16 h-16 rounded-full border-2 border-white"
+                alt="GitHub Avatar"
+              />
+              <h3
+                id="github-username"
+                class="text-xl font-semibold text-white"
+              ></h3>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <div class="flex flex-col space-y-1">
+                <span
+                  class="text-sm font-medium text-gray-500 dark:text-gray-400"
+                  >GitHub URL</span
+                >
+                <a
+                  id="github-link"
+                  href="#"
+                  target="_blank"
+                  class="text-blue-600 dark:text-blue-400 hover:underline truncate"
+                ></a>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col space-y-1">
+                  <span
+                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >Followers</span
+                  >
+                  <span
+                    id="github-followers"
+                    class="text-gray-800 dark:text-white font-medium"
+                  ></span>
+                </div>
+
+                <div class="flex flex-col space-y-1">
+                  <span
+                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >Following</span
+                  >
+                  <span
+                    id="github-following"
+                    class="text-gray-800 dark:text-white font-medium"
+                  ></span>
+                </div>
+
+                <div class="flex flex-col space-y-1">
+                  <span
+                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >Public Repos</span
+                  >
+                  <span
+                    id="github-repos"
+                    class="text-gray-800 dark:text-white font-medium"
+                  ></span>
+                </div>
+
+                <div class="flex flex-col space-y-1">
+                  <span
+                    class="text-sm font-medium text-gray-500 dark:text-gray-400"
+                    >Joined</span
+                  >
+                  <span
+                    id="github-joined"
+                    class="text-gray-800 dark:text-white font-medium"
+                  ></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-gray-50 dark:bg-gray-900"
+    >
+      <div class="max-w-7xl mx-auto w-full">
+        <div class="text-center mb-16">
+          <h2
+            class="text-4xl sm:text-5xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 mb-4"
+          >
+            My Projects
+          </h2>
+          <p
+            class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            A selection of repositories and creations I've worked on —
+            showcasing skills, creativity, and code in action.
+          </p>
+        </div>
+
+        <div
+          id="projects-container"
+          class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
+        >
+          <!-- Project Card Template -->
+          <div
+            class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
+          >
+            <div
+              class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 flex items-center justify-center"
+            >
+              <svg
+                class="w-16 h-16 text-white opacity-90"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                ></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                Project Title
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Brief description of the project and what it does or
+                demonstrates.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 text-xs font-medium rounded-full"
+                  >React</span
+                >
+                <span
+                  class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 text-xs font-medium rounded-full"
+                  >Node.js</span
+                >
+                <span
+                  class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-400 text-xs font-medium rounded-full"
+                  >Tailwind</span
+                >
+              </div>
+            </div>
+            <a href="#" class="absolute inset-0 z-10" aria-hidden="true"></a>
+          </div>
+          <!-- End Project Card Template -->
+
+          <!-- More cards will be injected here by JS -->
+        </div>
+
+        <div class="text-center mt-16">
+          <a
+            href="./projects.html"
+            class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 shadow-sm transition-all duration-200"
+          >
+            View All Projects
+            <svg
+              class="ml-3 -mr-1 h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
       type="module"
     ></script>
     <script type="text/javascript" src="./api/MyGitHubAccount.js"></script>
+    <script type="text/javascript" src="./api/script.js"></script>
   </body>
 </html>
