@@ -1,192 +1,36 @@
-@import "./componentStyles/paragraphs.css";
-@import "./componentStyles/navbarStyle.css";
 @import "./vars.css";
-@import "./componentStyles/githubProfileStyles.css";
 
-/* Universal styles */
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-/* root element styles */
-html {
-  font-size: 62.5%; /*so as 1rem is equal to 10px*/
-}
-
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-/*Heads*/
-h1 > span {
-  color: var(--accent-warm);
-}
-
-/* body styles */
-body {
-  align-items: center;
-  background-blend-mode: multiply;
-  background-color: var(--neutral-off-white);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--neutral-off-whitewhite);
-  display: flex;
-  flex-direction: column;
-  font-size: 1.6rem;
-  justify-content: center;
-  overflow-x: hidden;
-  padding: 1rem 5rem;
-  scroll-behavior: auto;
-  scroll-snap-type: y mandatory;
-}
-
-/* paragraphs */
-.lottie {
-  position: absolute;
-  bottom: 0.5rem;
-  /* z-index: -1; */
-}
-
-.hero {
-  align-items: center;
-  background-color: #142a41;
-  background: linear-gradient(
-    173deg,
-    rgba(40, 69, 102, 1) 60%,
-    rgba(43, 72, 105, 1) 0%,
-    rgba(77, 106, 140, 1) 79%
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  position: relative;
-  width: 100vw;
-}
-.about {
-  background-color: var(--neutral-off-white);
-  height: 100vh;
-  width: 100vw;
-}
-
-.about .header {
-  color: var(--accent-warm);
-}
-.main-header {
-  color: var(--neutral-off-white);
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 7rem;
-  text-align: center;
-  z-index: 1;
-}
-
-/* Mobile view media query (example: for screens up to 768px width) */
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 50%; /* Adjust base font size for smaller screens */
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
   }
-
-  body {
-    font-size: 1.4rem; /* Adjust body font size */
-    padding: 1rem 2rem; /* Reduce padding for smaller screens */
+  10% {
+    transform: rotate(14deg);
   }
-
-  .hero {
-    height: 100vh;
-    padding: 2rem; /* Add some padding around the content */
+  20% {
+    transform: rotate(-8deg);
   }
-
-  .main-header {
-    font-size: 4rem; /* Reduce header font size */
-    margin-top: 2rem; /* Add some top margin */
+  30% {
+    transform: rotate(14deg);
   }
-
-  .lottie {
-    position: relative;
-    bottom: 5rem;
-    margin-top: 2rem; /* Add some top margin */
-    margin-left: auto;
-    margin-right: auto;
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
-/* Further adjustments for even smaller screens (optional) */
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 43.75%; /* Further reduce base font size */
-  }
-
-  body {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .main-header {
-    font-size: 3rem;
-  }
-
-  .lottie {
-    width: 95%;
-  }
-}
-
-/* Tablet view media query (example: for screens between 769px and 1024px width) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  html {
-    font-size: 56.25%; /* Slightly reduce base font size for tablets */
-  }
-
-  body {
-    font-size: 1.5rem; /* Adjust body font size */
-    padding: 1rem 3rem; /* Adjust padding for tablets */
-  }
-
-  .hero {
-    position: relative;
-    height: auto; /* Adjust height, consider using min-height */
-    min-height: 100vh;
-    align-items: center; /* Keep content centered on tablets */
-    padding: 2rem;
-  }
-
-  .main-header {
-    font-size: 5rem; /* Reduce header font size for tablets */
-  }
-
-  .lottie {
-    position: absolute;
-    width: 60%; /* Adjust Lottie size for tablets */
-    bottom: 0;
-  }
-}
-
-/* //ABOUT section */
-.bio {
-  color: var(--tertiary-dark);
-  font-size: 3rem;
-}
-.about {
-  display: flex;
-  flex-direction: column;
-}
-.cards {
-  display: flex;
-  padding: 0 3rem;
-}
-
-.about-card {
-  flex: 3;
-  padding: 3rem;
-  text-align: justify;
-  margin: 20px auto; /* Centering with margin */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-}
-.github-profile-card {
-  flex: 1;
+.animate-waving-hand {
+  display: inline-block;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
 }
 
 
