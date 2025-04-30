@@ -72,23 +72,45 @@ async function renderGitHubRepositories(username) {
     // Clear previous content
     container.innerHTML = "";
 
-    repos
-      .filter((repod) => repod.stargazers_count > 0)
-      .forEach((repo) => {
-        const card = document.createElement("div");
-        card.className =
-          "group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1";
+    // Process repositories
+    for (const repo of repos.filter((repod) => repod.stargazers_count > 0)) {
+      const card = document.createElement("div");
+      card.className =
+        "group relative bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1";
 
-        // Determine language color (default to gray if no language)
-        const langColor = repo.language
-          ? getLanguageColor(repo.language)
-          : "bg-gray-500";
+      // Determine language color
+      const langColor = repo.language
+        ? getLanguageColor(repo.language)
+        : "bg-gray-500";
 
-        card.innerHTML = `
-        <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 flex items-center justify-center">
-          <svg class="w-16 h-16 text-white opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-          </svg>
+      // Try to get social preview image (GitHub's OpenGraph image)
+      let previewImage = null;
+      try {
+        // GitHub's OpenGraph image URL pattern
+        const ogImageUrl = `https://opengraph.githubassets.com/${new Date().getTime()}/${
+          repo.full_name
+        }`;
+
+        // Test if the image exists
+        const imgTest = await fetch(ogImageUrl, { method: "HEAD" });
+        if (imgTest.ok) {
+          previewImage = ogImageUrl;
+        }
+      } catch (e) {
+        console.log(`No preview image for ${repo.name}`);
+      }
+
+      card.innerHTML = `
+        <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 flex items-center justify-center overflow-hidden">
+          ${
+            previewImage
+              ? `<img src="${previewImage}" alt="${repo.name} preview" class="w-full h-full object-cover" loading="lazy" />`
+              : `
+                <svg class="w-16 h-16 text-white opacity-90" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              `
+          }
         </div>
         <div class="p-6">
           <h3 class="text-xl font-bold text-gray-800 mb-2">${repo.name}</h3>
@@ -111,7 +133,7 @@ async function renderGitHubRepositories(username) {
               
               <span class="flex items-center px-3 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">
                 <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                  <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
                 </svg>
                 ${repo.forks_count}
               </span>
@@ -135,8 +157,8 @@ async function renderGitHubRepositories(username) {
           </div>
         </div>
       `;
-        container.appendChild(card);
-      });
+      container.appendChild(card);
+    }
   } catch (error) {
     console.error("Error loading repositories:", error);
     document.getElementById("projects-container").innerHTML = `
