@@ -173,6 +173,72 @@ async function renderGitHubRepositories(username) {
   }
 }
 
+async function renderGitHubSkills(username) {
+  try {
+    const reposResponse = await fetch(
+      `https://api.github.com/users/${username}/repos`
+    );
+    if (!reposResponse.ok) throw new Error("Failed to fetch repos");
+    const repos = await reposResponse.json();
+
+    // Count language frequencies
+    const languageStats = {};
+    let totalReposWithLanguage = 0;
+
+    for (const repo of repos) {
+      if (repo.language) {
+        languageStats[repo.language] = (languageStats[repo.language] || 0) + 1;
+        totalReposWithLanguage++;
+      }
+    }
+
+    // Sort languages by frequency (descending)
+    const sortedLanguages = Object.entries(languageStats).sort(
+      (a, b) => b[1] - a[1]
+    );
+
+    // Render skills
+    const container = document.getElementById("skills-container");
+    container.innerHTML = sortedLanguages
+      .map(([lang, count]) => {
+        const percentage = Math.round((count / totalReposWithLanguage) * 100);
+        const colorClass = getLanguageColor(lang) || "bg-gray-500";
+
+        return `
+          <div class="skill-card p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-gray-800 dark:text-white">${lang}</span>
+              <span class="text-sm ${colorClass.replace(
+                "bg-",
+                "text-"
+              )}">${percentage}%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div class="${colorClass} h-2 rounded-full" style="width: ${percentage}%"></div>
+            </div>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">${count} ${
+          count === 1 ? "repo" : "repos"
+        }</p>
+          </div>
+        `;
+      })
+      .join("");
+  } catch (error) {
+    console.error("Error loading skills:", error);
+    document.getElementById("skills-container").innerHTML = `
+      <div class="col-span-full text-center py-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+        </svg>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">Failed to load skills data.</p>
+      </div>
+    `;
+  }
+}
+
+// Call it after rendering repositories
+renderGitHubSkills(myUserName);
+
 // Helper function to get language colors (simplified version)
 function getLanguageColor(language) {
   const colors = {
