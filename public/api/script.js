@@ -56,3 +56,34 @@ const toggleTheme = () => {
 
 themeToggle.addEventListener("click", toggleTheme);
 mobileThemeToggle.addEventListener("click", toggleTheme);
+
+// PARSING RESUME
+document
+  .getElementById("parseResumeBtn")
+  .addEventListener("click", async () => {
+    const btn = document.getElementById("parseResumeBtn");
+    btn.disabled = true;
+    btn.innerHTML = "⏳ Analyzing...";
+
+    try {
+      const response = await fetch(
+        "https://marronmw.netlify.app/api/parse-resume",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            resumeUrl:
+              "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID",
+          }),
+        }
+      );
+
+      const { skills } = await response.json();
+      renderResumeSkills(skills);
+    } catch (error) {
+      alert("Error: " + error.message);
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = "🔍 Analyze Resume with AI";
+    }
+  });

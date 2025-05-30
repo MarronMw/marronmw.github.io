@@ -1,0 +1,9 @@
+[build]
+  command = "npm install"
+  publish = "public"  # Point to your GitHub Pages folder
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
