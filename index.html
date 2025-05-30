@@ -234,6 +234,7 @@
 
     <!-- About Section -->
     <div
+      id="about"
       class="min-h-screen w-full flex items-center justify-center bg-white dark:bg-gray-900 px-4 py-12"
     >
       <div class="max-w-6xl mx-auto w-full">
@@ -460,6 +461,56 @@
         <div
           id="skills-container"
           class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
+        ></div>
+
+        <!-- Resume Download Card -->
+        <div class="mt-12 col-span-full">
+          <div
+            class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-0.5 shadow-lg"
+          >
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">
+                Want the full picture?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Download my resume for a detailed overview of my skills and
+                experience.
+              </p>
+              <a
+                href="https://drive.google.com/file/d/1LOprFff1kDioUdu6ksCjliQ7CJyq8Xpm/view?usp=drive_link"
+                target="_blank"
+                class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-sm transition-all duration-200"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                Download Resume (PDF)
+              </a>
+              <!-- AI Resume Analyser -->
+              <!-- <button
+                id="parseResumeBtn"
+                class="mt-8 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all"
+              >
+                🔍 Analyze Resume with AI
+              </button> -->
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="resume-skills-container"
+          class="hidden mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
         ></div>
       </div>
     </section>
