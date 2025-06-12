@@ -15,6 +15,33 @@
 
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes progress {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 75%;
+        }
+      }
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%);
+        }
+        20% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      .animate-progress {
+        animation: progress 2s ease-out forwards;
+      }
+      .animate-shine {
+        animation: shine 3s infinite;
+      }
+    </style>
   </head>
   <body>
     <header
@@ -681,35 +708,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Add these styles for the animations -->
-    <style>
-      @keyframes progress {
-        0% {
-          width: 0%;
-        }
-        100% {
-          width: 75%;
-        }
-      }
-      @keyframes shine {
-        0% {
-          transform: translateX(-100%);
-        }
-        20% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(100%);
-        }
-      }
-      .animate-progress {
-        animation: progress 2s ease-out forwards;
-      }
-      .animate-shine {
-        animation: shine 3s infinite;
-      }
-    </style>
 
     <script
       src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
