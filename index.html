@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maranatha James Ndege Portifolio</title>
 
-    <!-- SOCIAL PREVIEW -->
-
     <meta
       property="og:title"
       content="Maranatha James Ndege - Junior Full Stack Software Developer Portfolio"
@@ -42,17 +40,23 @@
       type="image/x-icon"
     />
 
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <!-- END OF FONTS -->
-
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
     <style>
       @keyframes progress {
         0% {
@@ -79,6 +83,83 @@
       .animate-shine {
         animation: shine 3s infinite;
       }
+
+      /* Custom CSS for Mobile Dot Navigation */
+      .navigation-mobile {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        transition-delay: 0.8s;
+        z-index: 10;
+      }
+
+      .navigation-mobile.navigation-mobile-active {
+        margin-top: 10rem;
+        width: 200px;
+        height: 200px;
+        transition-delay: 0s;
+        background: rgba(
+          33,
+          37,
+          50,
+          0.2
+        ); /* Semi-transparent background using RGBA */
+        backdrop-filter: blur(10px);
+      }
+
+      .navigation-mobile span {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background: #fff; /* White dots for collapsed state */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3rem;
+        /* These values need to be adjusted based on the total number of dots and desired spacing */
+        transform: translate(
+          calc(0.6rem * var(--x)),
+          calc(0.6rem * var(--y))
+        ); /* Adjust 15px for spacing */
+        transition: 0.5s, background 0.5s;
+        transition-delay: calc(0.1s * var(--i));
+      }
+
+      .navigation-mobile.navigation-mobile-active span {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #333849; /* Background color of the icon circle when active */
+        transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+      }
+      .navigation-mobile.navigation-mobile-active span a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .navigation-mobile span ion-icon {
+        font-size: 0em; /* Hide icons initially */
+        color: #fff;
+        transition: 0.5s;
+      }
+
+      .navigation-mobile.navigation-mobile-active span ion-icon {
+        font-size: 1.5em; /* Show icons when active */
+      }
+
+      .navigation-mobile.navigation-mobile-active span:hover ion-icon {
+        color: #00eeff; /* Hover color for icons */
+      }
+      /* End Custom CSS for Mobile Dot Navigation */
     </style>
   </head>
   <body>
@@ -87,7 +168,6 @@
     >
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-          <!-- Logo/Brand -->
           <div class="flex-shrink-0">
             <a
               href="#"
@@ -97,7 +177,6 @@
             </a>
           </div>
 
-          <!-- Desktop Navigation -->
           <div class="hidden md:block">
             <div class="ml-10 flex items-center space-x-8">
               <a
@@ -124,68 +203,33 @@
               >
                 Contact
               </a>
-
-              <!-- Dark Mode Toggle -->
-              <!-- <button
-                id="theme-toggle"
-                type="button"
-                class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2.5 transition-colors duration-200"
-              >
-                <svg
-                  id="theme-toggle-dark-icon"
-                  class="w-5 h-5 hidden"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                  ></path>
-                </svg>
-                <svg
-                  id="theme-toggle-light-icon"
-                  class="w-5 h-5 hidden"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button> -->
             </div>
           </div>
 
-          <!-- Mobile menu button -->
           <div class="md:hidden flex items-center">
-            <button
-              id="mobile-menu-button"
-              type="button"
-              class="text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2 transition-colors duration-200"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
+            <div class="navigation-mobile">
+              <span style="--i: 0; --x: 0; --y: -1"
+                ><a href="#"><ion-icon name="home-outline"></ion-icon></a
+              ></span>
+              <span style="--i: 1; --x: 1; --y: 0"
+                ><a href="#about"
+                  ><ion-icon name="information-circle-outline"></ion-icon></a
+              ></span>
+              <span style="--i: 2; --x: 0; --y: 1"
+                ><a href="#projects"
+                  ><ion-icon name="folder-outline"></ion-icon></a
+              ></span>
+              <span style="--i: 3; --x: -1; --y: 0"
+                ><a href="#contact"><ion-icon name="mail-outline"></ion-icon></a
+              ></span>
+              <span style="--i: 4; --x: 0; --y: 0"
+                ><ion-icon name="grid-outline"></ion-icon
+              ></span>
+            </div>
           </div>
         </div>
       </nav>
 
-      <!-- Mobile menu -->
       <div id="mobile-menu" class="md:hidden hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
@@ -212,48 +256,14 @@
           >
             Contact
           </a>
-          <div class="px-3 py-2">
-            <!-- <button
-              id="mobile-theme-toggle"
-              type="button"
-              class="flex items-center text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg px-3 py-2 transition-colors duration-200 w-full"
-            >
-              <span class="mr-3">Dark Mode</span>
-              <svg
-                id="mobile-theme-toggle-dark-icon"
-                class="w-5 h-5 hidden"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                ></path>
-              </svg>
-              <svg
-                id="mobile-theme-toggle-light-icon"
-                class="w-5 h-5 hidden"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button> -->
-          </div>
+          <div class="px-3 py-2"></div>
         </div>
       </div>
     </header>
 
-    <!-- Hero Section -->
     <div
       class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4 py-16 sm:px-6 lg:px-8"
     >
-      <!-- Content Container -->
       <div class="relative z-10 max-w-4xl mx-auto text-center">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6 leading-tight"
@@ -268,7 +278,6 @@
           >
         </h1>
 
-        <!-- Call-to-action buttons -->
         <div class="flex flex-wrap justify-center gap-4 mt-10">
           <a
             href="#projects"
@@ -286,7 +295,6 @@
         </div>
       </div>
 
-      <!-- Lottie Animation -->
       <dotlottie-player
         src="https://lottie.host/9a31ca59-b0b7-4078-823c-57cdea1f5633/uG2zinCBRx.lottie"
         background="transparent"
@@ -297,7 +305,6 @@
       ></dotlottie-player>
     </div>
 
-    <!-- About Section -->
     <div
       id="about"
       class="min-h-screen w-full flex items-center justify-center bg-white dark:bg-gray-900 px-4 py-12"
@@ -310,19 +317,15 @@
         </h2>
 
         <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Bio Card -->
           <div
             class="flex-1 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6"
           >
             <p
               class="text-gray-700 dark:text-gray-300 leading-relaxed"
               id="bio"
-            >
-              <!-- Bio content will be inserted here -->
-            </p>
+            ></p>
           </div>
 
-          <!-- GitHub Profile Card -->
           <div
             class="w-full lg:w-96 bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
           >
@@ -405,7 +408,6 @@
       </div>
     </div>
 
-    <!-- Projects Section -->
     <section
       id="projects"
       class="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-gray-50 dark:bg-gray-900"
@@ -429,7 +431,6 @@
           id="projects-container"
           class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
         >
-          <!-- Project Card Template -->
           <div
             class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full"
           >
@@ -476,9 +477,6 @@
             </div>
             <a href="#" class="absolute inset-0 z-10" aria-hidden="true"></a>
           </div>
-          <!-- End Project Card Template -->
-
-          <!-- More cards will be injected here by JS -->
         </div>
 
         <div class="text-center mt-16">
@@ -505,7 +503,6 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section
       id="skills"
       class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900"
@@ -522,13 +519,11 @@
           </p>
         </div>
 
-        <!-- Skills Container (populated by JS) -->
         <div
           id="skills-container"
           class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
         ></div>
 
-        <!-- Resume Download Card -->
         <div class="mt-12 col-span-full">
           <div
             class="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl p-0.5 shadow-lg"
@@ -562,13 +557,6 @@
                 </svg>
                 Download Resume (PDF)
               </a>
-              <!-- AI Resume Analyser -->
-              <!-- <button
-                id="parseResumeBtn"
-                class="mt-8 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all"
-              >
-                🔍 Analyze Resume with AI
-              </button> -->
             </div>
           </div>
         </div>
@@ -580,7 +568,6 @@
       </div>
     </section>
 
-    <!-- Under Development Section -->
     <section
       class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
     >
@@ -599,10 +586,8 @@
         <div
           class="flex flex-col lg:flex-row items-center justify-center gap-12"
         >
-          <!-- 3D Character -->
           <div class="w-full lg:w-1/3 flex justify-center">
             <div class="relative w-64 h-64">
-              <!-- 3D Construction Worker Character -->
               <dotlottie-player
                 src="./assets/construction.json"
                 background="transparent"
@@ -614,7 +599,6 @@
             </div>
           </div>
 
-          <!-- Features List -->
           <div class="w-full lg:w-1/2">
             <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
               <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6">
@@ -704,7 +688,7 @@
                     <h4
                       class="text-lg font-medium text-gray-800 dark:text-white"
                     >
-                      Confidentiality and User Engangement
+                      Confidentiality and User Engagement
                     </h4>
                     <p class="text-gray-600 dark:text-gray-400 mt-1">
                       Next time you visit, expect a more interaction between you
@@ -727,7 +711,6 @@
           </div>
         </div>
 
-        <!-- Progress animation at bottom -->
         <div class="mt-16 max-w-3xl mx-auto">
           <div
             class="relative h-4 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden"
@@ -753,5 +736,22 @@
     ></script>
     <script type="text/javascript" src="./api/MyGitHubAccount.js"></script>
     <script type="text/javascript" src="./api/script.js"></script>
+    <script>
+      const navigationMobile = document.querySelector(".navigation-mobile");
+      if (navigationMobile) {
+        // Ensure the element exists before trying to add a listener
+        navigationMobile.onclick = function () {
+          navigationMobile.classList.toggle("navigation-mobile-active");
+        };
+        // Add click listeners to the individual dot links
+        const dotLinks = navigationMobile.querySelectorAll("span a");
+        dotLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            // Close the dot navigation after a link is clicked
+            navigationMobile.classList.remove("navigation-mobile-active");
+          });
+        });
+      }
+    </script>
   </body>
 </html>
