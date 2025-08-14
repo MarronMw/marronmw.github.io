@@ -264,9 +264,10 @@
     </header>
 
     <div
-      class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4 py-16 sm:px-6 lg:px-8"
+      class="relative min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 px-4 py-16 sm:px-6 lg:px-8"
     >
-      <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <!-- Text Content -->
+      <div class="relative z-10 max-w-2xl text-center lg:text-left">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6 leading-tight"
         >
@@ -280,7 +281,7 @@
           >
         </h1>
 
-        <div class="flex flex-wrap justify-center gap-4 mt-10">
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-10">
           <a
             href="#projects"
             class="px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300"
@@ -297,14 +298,16 @@
         </div>
       </div>
 
-      <dotlottie-player
-        src="https://lottie.host/9a31ca59-b0b7-4078-823c-57cdea1f5633/uG2zinCBRx.lottie"
-        background="transparent"
-        speed="1"
-        class="absolute opacity-70 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] -bottom-10 -right-10 sm:right-0"
-        loop
-        autoplay
-      ></dotlottie-player>
+      <!-- Image -->
+      <div
+        class="relative mb-10 lg:mb-0 lg:ml-16 flex justify-center lg:justify-end w-full max-w-md"
+      >
+        <img
+          src="./assets/images/port.png"
+          alt="Maranatha James Ndege"
+          class="rounded-2xl shadow-2xl w-72 sm:w-80 lg:w-96 object-cover transition-transform duration-500 hover:scale-105"
+        />
+      </div>
     </div>
 
     <div
