@@ -1,178 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Maranatha James Ndege | Full Stack Software Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Maranatha James Ndege, a Junior Full Stack Software Developer. Explore projects in web development, mobile apps (GitSearch), and scalable backend systems." />
+    <meta name="keywords" content="Maranatha James Ndege, Full Stack Developer, Software Engineer Portfolio, React Developer, Malawi Developer, GitSearch App" />
+    <link rel="canonical" href="https://marronmw.netlify.app/" />
 
-    <meta
-      property="og:title"
-      content="Maranatha James Ndege - Junior Full Stack Software Developer Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Explore my portfolio showcasing robust full-stack software development projects, including web applications and innovative solutions. Passionate about building seamless user experiences and scalable backend systems."
-    />
-    <meta
-      property="og:image"
-      content="https://marronmw.netlify.app/assets/images/social_preview.jpg"
-    />
-    <meta property="og:url" content="https://marronmw.netlify.app/" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Maranatha Ndege's Portfolio" />
+    <meta property="og:url" content="https://marronmw.netlify.app/" />
+    <meta property="og:title" content="Maranatha James Ndege - Full Stack Software Developer" />
+    <meta property="og:description" content="Explore robust software projects, from web applications to innovative mobile solutions. Passionate about seamless UX and scalable systems." />
+    <meta property="og:image" content="https://marronmw.netlify.app/assets/images/social_preview.jpg" />
+    <meta property="og:site_name" content="Maranatha Ndege Portfolio" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Maranatha James Ndege - Junior Full Stack Developer"
-    />
-    <meta name="description" content="Portfolio of Maranatha James Ndege, a Full Stack Software Developer specializing in React, Node.js, and scalable web applications.">
-    <meta
-      name="twitter:description"
-      content="Building powerful web applications and intuitive user experiences. See my latest full-stack projects."
-    />
-    <meta
-      name="twitter:image"
-      content="https://marronmw.netlify.app/assets/images/social_preview.jpg"
-    />
-    <!-- Cronitor RUM -->
-<script async src="https://rum.cronitor.io/script.js"></script>
-<script>
-    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
-    cronitor('config', { clientKey: '016d44b6fb15f6e6a7edb694495c705f' });
-</script>
-<!-- End of Cronitor RUM -->
-    <link
-      rel="icon"
-      href="https://marronmw.netlify.app/assets/icons/icon.ico"
-      type="image/x-icon"
-    />
-    <link rel="canonical" href="https://marronmw.netlify.app/" />
+    <meta name="twitter:url" content="https://marronmw.netlify.app/" />
+    <meta name="twitter:title" content="Maranatha James Ndege - Junior Full Stack Developer" />
+    <meta name="twitter:description" content="Building powerful web applications and intuitive user experiences. See my latest projects." />
+    <meta name="twitter:image" content="https://marronmw.netlify.app/assets/images/social_preview.jpg" />
+
+    <link rel="icon" href="https://marronmw.netlify.app/assets/icons/icon.ico" type="image/x-icon" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet" />
+    
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-
-    <style>
-      @keyframes progress {
-        0% {
-          width: 0%;
-        }
-        100% {
-          width: 75%;
-        }
-      }
-      @keyframes shine {
-        0% {
-          transform: translateX(-100%);
-        }
-        20% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(100%);
-        }
-      }
-      .animate-progress {
-        animation: progress 2s ease-out forwards;
-      }
-      .animate-shine {
-        animation: shine 3s infinite;
-      }
-
-      /* Custom CSS for Mobile Dot Navigation */
-      .navigation-mobile {
-        position: relative;
-        width: 3rem;
-        height: 3rem;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.5s;
-        transition-delay: 0.8s;
-        z-index: 10;
-      }
-
-      .navigation-mobile.navigation-mobile-active {
-        margin-top: 10rem;
-        width: 200px;
-        height: 200px;
-        transition-delay: 0s;
-        background: rgba(
-          33,
-          37,
-          50,
-          0.6
-        ); /* Semi-transparent background using RGBA */
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .navigation-mobile span {
-        position: absolute;
-        width: 7px;
-        height: 7px;
-        background: #fff; /* White dots for collapsed state */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3rem;
-        /* These values need to be adjusted based on the total number of dots and desired spacing */
-        transform: translate(
-          calc(0.6rem * var(--x)),
-          calc(0.6rem * var(--y))
-        ); /* Adjust 15px for spacing */
-        transition: 0.5s, background 0.5s;
-        transition-delay: calc(0.1s * var(--i));
-      }
-
-      .navigation-mobile.navigation-mobile-active span {
-        width: 45px;
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #333849; /* Background color of the icon circle when active */
-        transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
-      }
-      .navigation-mobile.navigation-mobile-active span a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .navigation-mobile span ion-icon {
-        font-size: 0em; /* Hide icons initially */
-        color: #fff;
-        transition: 0.5s;
-      }
-
-      .navigation-mobile.navigation-mobile-active span ion-icon {
-        font-size: 1.5em; /* Show icons when active */
-      }
-
-      .navigation-mobile.navigation-mobile-active span:hover ion-icon {
-        color: #00eeff; /* Hover color for icons */
-      }
-      /* End Custom CSS for Mobile Dot Navigation */
-    </style>
-  </head>
+    
+    <script async src="https://rum.cronitor.io/script.js"></script>
+    <script>
+        window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+        cronitor('config', { clientKey: '016d44b6fb15f6e6a7edb694495c705f' });
+    </script>
+</head>
   <body>
     <header
       class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700"
@@ -814,7 +678,7 @@
         Upload an image and leave your thoughts. Your feedback helps me improve!
         </p>
       </div>
-      <form id="upload-form" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 flex flex-col gap-6">
+      <!-- <form id="upload-form" class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 flex flex-col gap-6">
         <div>
         <label for="file-input" class="block text-lg font-medium text-gray-700 dark:text-gray-200 mb-2">Upload an image (optional)</label>
         <input type="file" id="file-input" accept="image/*" class="block w-full text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
@@ -831,9 +695,9 @@
         <img id="uploaded-image" src="" alt="Uploaded Image" class="rounded-xl shadow-lg w-40 h-40 object-cover" style="display: none" />
         <p id="feedback-text" class="text-lg text-gray-700 dark:text-gray-200" style="display: none"></p>
         </div>
-      </form>
+      </form> -->
       <div class="mt-12"></div>
-        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Recent Feedback</h3>
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Feature coming soon</h3>
         <div id="feedback-list" class="grid gap-8 sm:grid-cols-2">
         <!-- Feedback items will be injected here -->
         </div>
